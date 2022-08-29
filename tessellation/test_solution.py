@@ -1,6 +1,8 @@
 # %%
 import numpy as np
+
 import solution
+
 
 # %%
 def is_correct_step_shape(start_point: list[int, int], end_point: list[int, int]) -> bool:
@@ -13,6 +15,7 @@ assert is_correct_step_shape([0, 0], [-2, 1])
 assert is_correct_step_shape([-2, 1], [0, 0])
 assert not is_correct_step_shape([1, 1], [0, 0])
 
+
 # %%
 
 
@@ -24,6 +27,7 @@ def is_point_on_desk(point: list[int, int], desk_size: list[int, int]) -> bool:
 assert not is_point_on_desk([1, -1], [2, 1])
 assert is_point_on_desk([0, 0], [1, 1])
 assert not is_point_on_desk([1, 0], [1, 1])
+
 
 # %%
 def fill_desk(points: list[list[int, int]], desk_size: list[int, int]) -> np.array:
@@ -41,6 +45,8 @@ def is_desk_tessellated(points: list[list[int, int]], desk_size: list[int, int])
 
 assert not is_desk_tessellated([[0, 0], [1, 0], [2, 1], [0, 1], [1, 1], [2, 0]], [3, 3])
 assert is_desk_tessellated([[0, 0], [1, 0], [2, 1], [0, 1], [1, 1], [2, 0]], [3, 2])
+
+
 # %%
 
 # %%
@@ -88,6 +94,7 @@ def evaluate_task(desk_size, solver):
 
 
 if __name__ == "__main__":
-    desk_sizes = [list(np.random.randint(5, high, size=2)) for high in list(range(10, 110))*1]
+    desk_sizes = [list(np.random.randint(5, high, size=2)) for high in list(range(10, 110)) * 1]
+    print(f'{desk_sizes=}')
     scores = [evaluate_task(desk_size, solution.main) for desk_size in desk_sizes]
     print(f"{np.mean(scores)=}, {np.std(scores)=}, {len(scores)=}")

@@ -35,5 +35,6 @@ def main(desk_size: list[int, int]) -> list[list[int, int]]:
 
 
 score = test_solution.evaluate_task([5,5], main)
+print(*main([5, 5]), sep='\n')
 print(f"task {score=}")
 # %%

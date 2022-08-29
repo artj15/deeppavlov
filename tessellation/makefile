@@ -8,4 +8,6 @@ test:
 test_example: 
 	docker build -t tessellation .
 	docker run --rm -ti -v ${PWD}:/usr/src/app tessellation python solution_example.py
+my_solution:
+
 .PHONY: test_example
